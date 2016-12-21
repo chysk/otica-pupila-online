@@ -6,6 +6,9 @@ var db = mongojs('oculosdb', ['oculosdb']);
 var bodyParser = require('body-parser');
 */
 app.use(express.static(__dirname + "/public"));
+app.get('/*', function(req, res) {
+  res.sendfile('public/index.html');
+});
 /*
 app.use(bodyParser.json());
 
