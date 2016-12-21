@@ -1,0 +1,8 @@
+<div class="container">
+	<div class="col-sm-3">
+		<h3>Nossos produtos:</h2>
+		<ul class="categList">
+			<li ng-if="cat.title != 'Uncategorized'" ng-repeat="cat in categories"><a ng-href="/produtos/{{cat.id}}">{{cat.title}}</a></li>
+		</ul>
+	</div>
+</div>

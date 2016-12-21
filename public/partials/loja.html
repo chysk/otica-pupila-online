@@ -1,0 +1,15 @@
+<div class="container shopList"> 
+	<div class="col-sm-3 prod-box" ng-repeat="prod in products">
+		<img ng-src="{{prod.images[0].url.http}}">
+		<h4>{{prod.title}}</h4>
+		<p>{{prod.price.value}}</p>
+		<button class="btnAdd" ng-click="addOnCar(prod.id)">Adicionar ao Carrinho</button>
+	</div>
+	<div class="shopCart">
+		<a href="/carrinho">
+			<img src="img/shopping-cart.png">
+			<span id="numbOfProd">1</span>
+		</a>
+	</div>
+	<h4 id="price"></h4>
+</div>

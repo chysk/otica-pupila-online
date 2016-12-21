@@ -1,0 +1,49 @@
+<!DOCTYPE>
+<html ng-app="myApp">
+<head>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<base href="/">
+	<title>Ótica Pupila</title>
+</head>
+<body ng-controller="MainCtrl">
+	<header>
+		<nav>
+			<div class="menu">
+				<div class="header">
+					<a class="linkLogo" href="#"><img class="logo" src="img/logo.png"></a>
+				</div>
+				<ul class="nav navbar-nav list">
+					<li class="active"><a href="#">Home</a></li>
+					<li><a href="#">Notícias</a></li>
+					<li><a href="produtos">Loja Online</a></li> 
+					<li><a href="#">Deixe seu currículo</a></li> 
+				</ul>
+			</div>
+		</nav>
+	</header>
+	<main>
+		<div>
+			<div ng-view></div>
+		</div>
+	</main>
+	<footer>
+	
+	</footer>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0-rc.2/angular.min.js"></script>
+ 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-route.min.js"></script>
+	<script src="js/controllers/mainController.js"></script>
+	<!--
+	<script src="js/controllers/lojaController.js"></script>
+	<script src="js/controllers/cartController.js"></script>
+	-->
+	<script src="js/services/moltin.min.js"></script>
+	<script src="js/services/moltin.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+<div class="container">
+	<table class="table">
+		<tr>
+			<th>Produto:</th>
+			<th>Preço Unitário:</th>
+			<th></th>
+		</tr>
+		<tr ng-repeat="item in carrinho track by $index">
+			<td>{{item.title}}</td>
+			<td>{{item.price.value}}</td>
+			<td><button class="btn btn-danger" ng-click="remove(item.id)">Deletar</button></td>
+		</tr>
+		<tr>
+			<th></th>
+			<th></th>
+			<th></th>
+		</tr>
+	</table>
+</div>
