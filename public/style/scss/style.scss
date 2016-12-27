@@ -5,12 +5,11 @@
 @import 'carrinho';
 
 body{
-	background-color: lightgrey;
+	background-color: #E8E8E8;
 }
 
 .menu{
-	padding: 0 13.5%;
-    background: darkgrey;
+    background: #B5B5B5;
     height: 100px;
 }
 
@@ -21,12 +20,16 @@ body{
 .navbar-nav{
 	width: 89.395%;
 	height: 100%;
-	padding: 2.6% 5%;
+	padding: 5% 0 0 5%;
 }
 
 .navbar-nav li a{
 	height: 100%;
 	color: black;
+}
+
+.act{
+	background-color: #B5B5B5 !important;
 }
 
 .navbar-brand{

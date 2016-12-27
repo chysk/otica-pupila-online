@@ -1,28 +1,16 @@
-var app = angular.module("myApp", [
+var app = angular.module("lojaController", [
 	"ngRoute",
 	"moltinStoreApp.moltin"
 	]);
 
-app.controller('LojaCtrl', function($scope,$http,cartFact,categories){
+app.controller('LojaCtrl', function($scope,$http,cartFact,categories,products,moltin){
 	$scope.categories = categories;
-	console.log(categories);
-
-	//ctrler functions
-	var refresh = function(){
-		$http.get('/oculosdb')
-		.then(
-			function(response){
-				$scope.oculosdb = response.data;
-			},
-			function(error){
-				console.log("errrrrrrou");
-			});
-	}
-	refresh();
+	$scope.products = products;
 
 	var controleQntProd = function(){
 		var prodAdded = document.getElementById('numbOfProd');
 		if(cart.length > 0){
+			console.log(cart);
 			prodAdded.style.display = 'block';
 			prodAdded.innerHTML = cart.length;
 			if(cart.length === 10){
@@ -39,24 +27,25 @@ app.controller('LojaCtrl', function($scope,$http,cartFact,categories){
 		var price = document.getElementById('price');
 		totalPrice = 0;
 		for(var i = 0; i < p.length; i++){
-			totalPrice = totalPrice + parseFloat(p[i].price);
+			var aux = p[i].price.value.split('R$')[1];
+			console.log(aux);
+			totalPrice = totalPrice + parseFloat(aux);
 		}
-		price.innerHTML = "R$ "+ totalPrice.toFixed(2);
+		price.innerHTML = "R$" + totalPrice.toFixed(2);
 	}
 	if(cart)
 		somaTotal(cart);
 
 	//scope functions
 	$scope.addOnCar = function(id){
-		$http.get('/oculosdb/' + id)
-		.then(
-			function(response){
-				cart.push(response.data);
-				controleQntProd();
-				somaTotal(cart);
-			},
-			function(err){
-				console.log('errroou');
-			});
-	};
+		for(var i = 0; i<products.length; i++){
+			if(id == products[i].id){
+				cart.push(products[i]);
+			}
+		}
+		somaTotal(cart);
+		controleQntProd();
+		};
+
+
 });

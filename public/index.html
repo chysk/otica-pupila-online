@@ -14,36 +14,52 @@
 	<header>
 		<nav>
 			<div class="container-fluid menu">
-				<div class="navbar-header">
-					<a class="navbar-brand" href="#"><img class="logo" src="img/logo.png"></a>
+				<div class="container">
+					<div class="navbar-header">
+						<a class="navbar-brand" href="#"><img class="logo" src="img/logo.png"></a>
+					</div>
+					<ul class="nav navbar-nav">
+						<li ng-class="{ act: isActive('/')}"><a href="/">Home</a></li>
+						<li ng-class="{ act: isActive('/noticias')}"><a href="#">Notícias</a></li>
+						<li ng-class="{ act: isActive('/produtos')}"><a href="produtos">Loja Online</a></li> 
+						<li ng-class="{ act: isActive('/curriculos')}"><a href="#">Deixe seu currículo</a></li> 
+					</ul>
 				</div>
-				<ul class="nav navbar-nav">
-					<li class="active"><a href="/">Home</a></li>
-					<li><a href="#">Notícias</a></li>
-					<li><a href="produtos">Loja Online</a></li> 
-					<li><a href="#">Deixe seu currículo</a></li> 
-				</ul>
 			</div>
 		</nav>
 	</header>
+	<!-- NG-VIEW -->
 	<main>
 		<div>
 			<div ng-view></div>
 		</div>
 	</main>
+	<!-- end of NG-VIEW -->
 	<footer>
-	
+		<div class="container">
+			<ul>
+				<li><a href="#">sobre</a></li>
+				<li><a href="#">sobre</a></li>
+				<li><a href="#">sobre</a></li>
+				<li><a href="#">sobre</a></li>
+			</ul>
+			<h1>AQUI JAS UM RODA-PÉ</h1>
+		</div>
 	</footer>
 
+	<!--libs-->
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0-rc.2/angular.min.js"></script>
  	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-route.min.js"></script>
+ 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+ 	<script src="js/services/moltin.min.js"></script>
+	<script src="js/services/moltin.js"></script>
+ 	<!-- controllers -->
 	<script src="js/controllers/mainController.js"></script>
-	<!--
 	<script src="js/controllers/lojaController.js"></script>
 	<script src="js/controllers/cartController.js"></script>
-	-->
-	<script src="js/services/moltin.min.js"></script>
-	<script src="js/services/moltin.js"></script>
+	<script src="js/controllers/prodController.js"></script>
+	<script src="js/controllers/homeController.js"></script>
+
 
 </body>
 </html>
