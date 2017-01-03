@@ -1,24 +1,105 @@
-.slider {
-  background-color: white;
-  width: 800px;
-  height: 250px;
-  display: block;
-  margin: 10px auto;
-  overflow: hidden; }
-
-.slider ul {
-  padding: 0;
-  margin: 0;
-  width: 1000000%; }
-
-.banner {
+.rslides {
+  position: relative;
   list-style: none;
-  width: 800px;
-  height: 250px;
-  display: inline-block; }
+  overflow: hidden;
+  width: 100%;
+  max-width: 900px;
+  padding: 0;
+  margin: 0 auto; }
+
+.rslides li {
+  -webkit-backface-visibility: hidden;
+  position: absolute;
+  display: none;
+  width: 100%;
+  left: 0;
+  top: 0; }
+
+.rslides li:first-child {
+  position: relative;
+  display: block;
+  float: left; }
+
+.rslides img {
+  display: block;
+  height: auto;
+  float: left;
+  width: 100%;
+  border: 0; }
+
+.rslides_tabs {
+  background: rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 1px rgba(255, 255, 255, 0.3), inset 0 0 5px black;
+  -moz-box-shadow: 0 0 1px rgba(255, 255, 255, 0.3), inset 0 0 5px black;
+  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.3), inset 0 0 5px black;
+  font-size: 18px;
+  list-style: none;
+  margin: 0 auto 50px;
+  padding: 10px 0;
+  text-align: center;
+  width: 100%;
+  max-width: 900px; }
+
+.rslides_tabs li:first-child {
+  margin-left: 0; }
+
+.rslides_tabs li {
+  display: inline;
+  float: none;
+  margin-right: 1px; }
+
+.rslides_tabs .rslides_here a {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-weight: bold; }
+
+.rslides_tabs a {
+  width: auto;
+  text-decoration: none;
+  color: #000;
+  line-height: 20px;
+  padding: 9px 20px;
+  height: auto;
+  background: transparent;
+  display: inline; }
+
+.hotNews {
+  width: 100%;
+  max-width: 900px;
+  height: 600px;
+  margin: 0 auto; }
+
+.new {
+  height: 49%;
+  margin-bottom: 1%;
+  border: 0.2px solid #000; }
+
+.new:last-child {
+  margin-bottom: 0; }
+
+.headerNew {
+  background-color: #B5B5B5;
+  padding: 5px 5px 5px 20px;
+  height: 10%; }
+
+.headerNew h4 {
+  font-weight: bolder;
+  margin: 0; }
+
+.bodyNew {
+  padding: 0 10px;
+  overflow: auto;
+  height: 90%;
+  background-color: #fff; }
+
+html {
+  height: 100%; }
 
 body {
-  background-color: #E8E8E8; }
+  background-color: #E8E8E8;
+  margin: 0;
+  position: relative;
+  min-height: 100%; }
 
 .menu {
   background: #B5B5B5;
@@ -34,10 +115,10 @@ body {
 
 .navbar-nav li a {
   height: 100%;
-  color: black; }
+  color: #000; }
 
 .act {
-  background-color: #B5B5B5 !important; }
+  background-color: #E8E8E8 !important; }
 
 .navbar-brand {
   padding: 0;
@@ -47,5 +128,23 @@ body {
   margin-top: 2.5px;
   width: 95px;
   height: 95px; }
+
+.foot {
+  background-color: #B5B5B5;
+  margin-top: 10px;
+  /*position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  margin-top: 200px;*/ }
+
+.foot .container {
+  padding: 20px 0 10px 10px; }
+
+.navfooter {
+  width: 30%; }
+
+.navfooter a {
+  color: #000; }
 
 /*# sourceMappingURL=style.css.map */

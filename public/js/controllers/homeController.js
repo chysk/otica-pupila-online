@@ -4,16 +4,28 @@ var app = angular.module("homeController", [
 	]);
 
 app.controller('HomeCtrl', function($scope,$http){
-	var numSlide = 3
-	for(var i=0;i<numSlide;i++){
-		$( ".banner:first" ).clone().appendTo( ".bannerUL" );
-	}
-	var j = 1;
-	$(".banner").each(function(){
-		console.log('oi');
-		$(this).css('background-image', 'url(img/slides/slide'+j+'.png)');
-		$(this).css('background-size', 'contain');
-		$(this).css('background-repeat', 'no-repeat');
-		j++
+	//slide show
+	var slideShow;
+	(slideShow = function(){
+		var slide = {
+			num : 4
+		}
+		var j=1;
+		for(var i=1;i<slide.num;i++){
+			console.log('oki'+i);
+			$(".banner:first" ).clone().appendTo( ".rslides" );
+		}
+		$(".banner img").each(function(){
+			$(this).attr("src", 'img/slides/'+j+'.png');
+			j++
+		});
+	})();
+
+	$(".rslides").responsiveSlides({
+		auto: true,
+		pager: true,
+		timeout: 5000,
+		pause: true
 	});
+
 });
